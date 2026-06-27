@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaQuest — Leaderboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&family=Syne:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <canvas id="bgCanvas"></canvas>
+
+  <div class="shell lb-shell">
+
+    <div class="lb-header">
+      <a href="index.html" class="back-btn">← BACK</a>
+      <h1 class="logo lb-logo">Java<span>Quest</span></h1>
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="beginner">Beginner</button>
+        <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+        <button class="filter-btn" data-filter="advanced">Advanced</button>
+      </div>
+    </div>
+
+    <div class="lb-podium" id="lbPodium">
+      <!-- top 3 injected by JS -->
+    </div>
+
+    <div class="lb-table-wrap">
+      <table class="lb-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>PLAYER</th>
+            <th>LEVEL</th>
+            <th>SCORE</th>
+            <th>ACCURACY</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboardBody">
+          <tr class="lb-loading"><td colspan="5">Loading scores...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="lb-empty hidden" id="lbEmpty">No scores yet. Be the first! 🚀</p>
+
+  </div>
+
+  <script src="js/leaderboard.js"></script>
+</body>
+</html>
