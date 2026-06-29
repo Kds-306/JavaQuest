@@ -4,7 +4,7 @@
              score save, animated background
 ═══════════════════════════════════════════════ */
 
-const BASE_URL = "http://localhost:8081";
+const BASE_URL = "https://javaquest-1.onrender.com";
 const TIMER_SECONDS = 20;
 const QUESTIONS_PER_GAME = 10;
 
