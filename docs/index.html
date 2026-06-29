@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image" href="favicon.png">
+  <title>JavaQuest — Master Java</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&family=Syne:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Animated background grid -->
+  <canvas id="bgCanvas"></canvas>
+
+  <div class="shell">
+
+    <!-- ── SCREEN 1: INTRO ─────────────────────────── -->
+    <div id="screen-intro" class="screen active">
+      <div class="logo-block">
+        <div class="logo-tag">// v2.0</div>
+        <h1 class="logo">Java<span>Quest</span></h1>
+        <p class="tagline">Level up your Java. One question at a time.</p>
+      </div>
+
+      <div class="name-row">
+        <label for="playerName">PLAYER_ID</label>
+        <input id="playerName" type="text" placeholder="enter your name..." autocomplete="off" maxlength="20" />
+      </div>
+
+      <div class="level-grid">
+        <button class="level-card" data-level="beginner">
+          <span class="lc-icon">01</span>
+          <span class="lc-label">Beginner</span>
+          <span class="lc-desc">Syntax · Types · Basics</span>
+          <span class="lc-count">10 of 50 questions</span>
+        </button>
+        <button class="level-card" data-level="intermediate">
+          <span class="lc-icon">02</span>
+          <span class="lc-label">Intermediate</span>
+          <span class="lc-desc">OOP · Collections · APIs</span>
+          <span class="lc-count">10 of 50 questions</span>
+        </button>
+        <button class="level-card" data-level="advanced">
+          <span class="lc-icon">03</span>
+          <span class="lc-label">Advanced</span>
+          <span class="lc-desc">Streams · Threads · JVM</span>
+          <span class="lc-count">10 of 50 questions</span>
+        </button>
+      </div>
+
+      <button id="startBtn" class="btn-primary" disabled>
+        <span>INITIALISE GAME</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <a href="leaderboard.html" class="lb-link">🏆 View Leaderboard</a>
+    </div>
+
+    <!-- ── SCREEN 2: GAME ──────────────────────────── -->
+    <div id="screen-game" class="screen">
+
+      <div class="game-header">
+        <div class="gh-left">
+          <span class="gh-level" id="gh-level">BEGINNER</span>
+          <span class="gh-qnum" id="gh-qnum">Q 1 / 10</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="gh-score-wrap">
+          <span class="gh-score-label">SCORE</span>
+          <span class="gh-score" id="gh-score">000</span>
+        </div>
+      </div>
+
+      <div class="timer-bar"><div class="timer-fill" id="timerFill"></div></div>
+
+      <div class="question-card" id="questionCard">
+        <p class="q-label">QUESTION</p>
+        <h2 id="questionText">Loading...</h2>
+      </div>
+
+      <div class="options-grid" id="optionsGrid">
+        <button class="opt-btn" data-idx="0"></button>
+        <button class="opt-btn" data-idx="1"></button>
+        <button class="opt-btn" data-idx="2"></button>
+        <button class="opt-btn" data-idx="3"></button>
+      </div>
+      
+
+      <div class="feedback-row" id="feedbackRow">
+        <span id="feedbackText"></span>
+        <button id="nextBtn" class="btn-next hidden">NEXT <span>→</span></button>
+      </div>
+    </div>
+
+    <!-- ── SCREEN 3: RESULT ────────────────────────── -->
+    <div id="screen-result" class="screen">
+      <div class="result-inner">
+        <div class="result-badge" id="resultBadge">🎉</div>
+        <h2 class="result-title" id="resultTitle">Game Over</h2>
+        <div class="result-score-wrap">
+          <span class="result-score" id="resultScore">0</span>
+          <span class="result-total" id="resultTotal">/ 10</span>
+        </div>
+        <p class="result-msg" id="resultMsg"></p>
+        <div class="result-stats" id="resultStats"></div>
+        <div class="result-btns">
+          <button class="btn-primary" id="playAgainBtn">PLAY AGAIN</button>
+          <a href="leaderboard.html" class="btn-secondary">LEADERBOARD</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
