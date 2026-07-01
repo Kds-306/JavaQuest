@@ -4,7 +4,7 @@
              level filter, rank column, accuracy
 ═══════════════════════════════════════════════ */
 
-const BASE_URL = "http://localhost:8081";
+const BASE_URL = "http://javaquest-1.onrender.com";
 const TOTAL_PER_LEVEL = 10; // ✅ Fixed: was 8, now 10 (matches game)
 
 // ── DOM ───────────────────────────────────────
